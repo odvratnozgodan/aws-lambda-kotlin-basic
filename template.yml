@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: A basic Kotlin Lambda function
+Resources:
+  function:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: build/libs/aws-lambda-kotlin-basic-1.0-SNAPSHOT-all.jar
+      Handler: solutions.deliverit.BasicLambda::handleRequest
+      Runtime: java17
+      Description: Kotlin function
+      MemorySize: 512
+      Timeout: 10
+      # Function's execution role
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AWSLambda_ReadOnlyAccess
+        - AWSXrayWriteOnlyAccess
+        - AWSLambdaVPCAccessExecutionRole
+      Tracing: Active
