@@ -9,7 +9,7 @@ Resources:
       Handler: solutions.deliverit.BasicLambda::handleRequest
       Runtime: java17
       Description: Kotlin function
-      MemorySize: 512
+      MemorySize: 256
       Timeout: 10
       Policies:
       - AWSLambdaBasicExecutionRole
