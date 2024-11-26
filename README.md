@@ -74,6 +74,13 @@ Follow these steps to set up the project:
      aws cloudformation deploy --template-file template-out.yml --stack-name lambda-kotlin --capabilities CAPABILITY_NAMED_IAM
      ```
 
+5. **Test the Lambda function:**
+   - To test execute the following command. Note that you have to change the `YOUR_FUNCTION_NAME` to the actual name of your Lambda function(you can find it in the AWS Lambda dashboard):
+     ```bash
+     aws lambda invoke --function-name [YOUR_FUNCTION_NAME] --payload '{ "message": "Hey! Ho! Lets go!" }' out.json
+     ```
+     
+
 ## Conclusion
 
 This project demonstrates the basic setup and deployment of an AWS Lambda function using Kotlin. As you progress through the series, you will explore more advanced features and capabilities of AWS Lambda.
